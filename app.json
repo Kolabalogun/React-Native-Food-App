@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "TastyApp",
+    "slug": "TastyApp",
+    "version": "1.0.0",
+    "owner": "ibrahimdevv",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/jj.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+   
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/jj.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.ibrahimdevv.TastyApp"
+    },
+    "web": {
+      "favicon": "./assets/jj.png"
+    },
+    "description": "Food Delivery Application"
+  }
+}
