@@ -27,5 +27,3 @@ const Navigations = () => {
 };
 
 export default Navigations;
-
-const styles = StyleSheet.create({});

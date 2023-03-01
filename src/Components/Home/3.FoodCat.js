@@ -14,7 +14,7 @@ const FoodCatTitle = () => {
 
   return (
     <>
-      <View style={styles.foodCatHeaderTitle}>
+      <View>
         <Text style={styles.foodCatHeaderTitleTxt}>Food</Text>
         <Text style={styles.foodCatHeaderTitleTxt}>Categories</Text>
       </View>
