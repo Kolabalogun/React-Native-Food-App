@@ -9,9 +9,7 @@ const CheckoutTopbar = ({ navigation }) => {
     <View style={styles.TopBar}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image
-          source={{
-            uri: "https://cdn.iconscout.com/icon/premium/png-128-thumb/go-back-arrow-5763885-4827407.png",
-          }}
+          source={require("../../../assets/icon/back.png")}
           resizeMode="contain"
           style={{ height: 20, width: 25 }}
         />
@@ -19,16 +17,7 @@ const CheckoutTopbar = ({ navigation }) => {
       <View style={styles.location}>
         <Text style={styles.locationTxt}>Checkout</Text>
       </View>
-      <TouchableOpacity>
-        {/* <Image
-          source={require("../../../assets/icon/bag.png")}
-          resizeMode="contain"
-          style={{
-            height: 25,
-            width: 25,
-          }}
-        /> */}
-      </TouchableOpacity>
+      <TouchableOpacity></TouchableOpacity>
     </View>
   );
 };

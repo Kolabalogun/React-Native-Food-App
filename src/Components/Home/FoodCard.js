@@ -1,9 +1,12 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { useGlobalContext } from "../../Function/Context";
+import { initialCurrentLocation } from "../../Utils/Array";
 
 const FoodCard = ({ food }) => {
   const { navigation } = useGlobalContext();
+
+  const currentLocation = initialCurrentLocation;
 
   return (
     <TouchableOpacity

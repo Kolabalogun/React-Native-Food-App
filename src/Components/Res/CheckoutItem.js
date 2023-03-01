@@ -19,7 +19,7 @@ const CheckoutItem = ({ photo, name, price, value }) => {
           </View>
           <View style={styles.left}>
             <Text style={styles.leftname}>{name} </Text>
-            <Text style={styles.leftname}>Amount: {value} </Text>
+            <Text style={styles.leftname}>Plate: {value} </Text>
           </View>
           <View style={styles.right}>
             <Text style={styles.total}>${price * value} </Text>

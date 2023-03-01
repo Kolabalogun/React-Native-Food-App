@@ -4,22 +4,40 @@ import { useGlobalContext } from "../Function/Context";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
 import Polyline from "@mapbox/polyline";
+import { initialCurrentLocation } from "../Utils/Array";
 
 const MapOrderDelivery = ({ route, navigation }) => {
-  const [item, itemmF] = useState(null);
+  const [itemm, itemmF] = useState(null);
   const [streetName, streetNamef] = useState("");
   const [fromLocation, fromLocationf] = useState(null);
   const [toLocation, toLocationf] = useState(null);
   const [region, regionf] = useState(null);
   const [coords, coordsf] = useState([]);
 
+  let currentLocation = initialCurrentLocation;
+
+  const item = {
+    menuId: 1,
+    name: "Crispy Baked French Fries",
+    photo:
+      "https://images.pexels.com/photos/3616956/pexels-photo-3616956.jpeg?cs=srgb&dl=pexels-daniel-reche-3616956.jpg&fm=jpg",
+    description: "Crispy Baked French Fries",
+    calories: 194,
+    status: "Available",
+    categories: [4],
+    location: {
+      longitude: 4.5862441,
+      latitude: 8.4975072,
+    },
+    value: 0,
+    isCart: false,
+    amount: 1,
+    price: 8,
+  };
+
   useEffect(() => {
-    let { item, currentLocation } = route.params;
-
-    console.log(item.item);
-
     let fromLoc = currentLocation.gps;
-    let toLoc = item.item.location;
+    let toLoc = item.location;
     let street = currentLocation?.streetName;
 
     let mapRegion = {
@@ -32,7 +50,7 @@ const MapOrderDelivery = ({ route, navigation }) => {
     // console.log(fromLoc);
     // console.log(toLoc);
 
-    itemmF(item?.item);
+    itemmF(item);
     streetNamef(street);
     fromLocationf(fromLoc);
     toLocationf(toLoc);

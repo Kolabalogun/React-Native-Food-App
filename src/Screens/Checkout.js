@@ -70,7 +70,9 @@ const Checkout = ({ navigation }) => {
   function handleNxtPage() {
     if (!showInfo) {
       handleCheckOut();
-      navigation.navigate("Success");
+      // navigation.navigate("MapOrderDelivery");
+
+      navigation.navigate("MapOrderDelivery");
     } else {
       notificationF("All Text Field must be filled");
     }
@@ -247,15 +249,13 @@ export default Checkout;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-
-    height: "100%",
+    flex: 1,
 
     backgroundColor: "aliceblue",
   },
   foodlist: {
     marginTop: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
   },
   delivery: {
     backgroundColor: "white",

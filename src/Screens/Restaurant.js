@@ -19,21 +19,21 @@ const Restaurant = ({ navigation, route }) => {
     useGlobalContext();
 
   useEffect(() => {
-    let { item, currentLocation } = route.params;
-    itemF(item);
+    let { food, currentLocation } = route.params;
+    foodF(food);
     currentLocationF(currentLocation);
   });
 
   const [count, countF] = useState(0);
-  const [item, itemF] = useState(null);
+  const [food, foodF] = useState(null);
   const [currentLocation, currentLocationF] = useState(null);
   const [constt, consttF] = useState(null);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="flex-1">
       <View style={{ flex: 2 }}>
         <ImageBackground
-          source={{ uri: item?.item.photo }}
+          source={{ uri: food?.photo }}
           style={{ height: "100%" }}
           resizeMode="cover"
         >
@@ -46,15 +46,15 @@ const Restaurant = ({ navigation, route }) => {
         <View style={styles.line}></View>
         <View style={styles.NameandCount}>
           <View style={styles.name}>
-            <Text style={styles.Foodname}>{item?.item.name}</Text>
-            <Text style={styles.FoodDes}>{item?.item.description}</Text>
+            <Text style={styles.Foodname}>{food?.name}</Text>
+            <Text style={styles.FoodDes}>{food?.description}</Text>
           </View>
           <View style={styles.count}>
             <TouchableOpacity
               style={styles.countBtn}
               onPress={() => {
-                decrement(item?.item.menuId);
-                if (constt > 0 || item?.item.value) {
+                decrement(food?.menuId);
+                if (constt > 0 || food?.value) {
                   consttF(count - 1);
                 }
               }}
@@ -63,12 +63,12 @@ const Restaurant = ({ navigation, route }) => {
             </TouchableOpacity>
             <View style={styles.countBtn}>
               <Text style={styles.countBtnTxt}>
-                {constt ? currentFood : item?.item.value}
+                {constt ? currentFood : food?.value}
               </Text>
             </View>
             <TouchableOpacity
               onPress={() => {
-                increment(item?.item.menuId);
+                increment(food?.menuId);
 
                 consttF(count + 1);
               }}
@@ -80,7 +80,7 @@ const Restaurant = ({ navigation, route }) => {
         </View>
         <View style={styles.checkout}>
           <View style={styles.cartDetail}>
-            <Text style={styles.cartDetailTxt}>{navAmount} Items in Cart</Text>
+            <Text style={styles.cartDetailTxt}>{navAmount} foods in Cart</Text>
             <Text style={styles.cartDetailTxt}>$ {total}</Text>
           </View>
           <View style={styles.cartDetail}>
@@ -90,7 +90,7 @@ const Restaurant = ({ navigation, route }) => {
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("Checkout", {
-                item,
+                food,
                 currentLocation,
               });
             }}
@@ -107,15 +107,7 @@ const Restaurant = ({ navigation, route }) => {
 export default Restaurant;
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-
-    height: "100%",
-
-    backgroundColor: "aliceblue",
-  },
   foodBoard: {
-    // flex: 1,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     backgroundColor: "white",

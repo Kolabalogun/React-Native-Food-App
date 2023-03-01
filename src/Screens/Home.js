@@ -4,7 +4,7 @@ import React from "react";
 import FoodList from "../Components/Home/FoodList";
 import Navbar from "../Components/Home/Navbar";
 import AdsBoard from "../Components/Home/AdsBoard";
-import FoodCatTitle from "../Components/Home/3.FoodCat";
+import FoodCategory from "../Components/Home/FoodCategory";
 
 const Home = ({ navigation }) => {
   return (
@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <AdsBoard />
-        <FoodCatTitle />
+        <FoodCategory />
         <FoodList />
       </ScrollView>
     </SafeAreaView>
