@@ -22,7 +22,6 @@
       "supportsTablet": true
     },
     "android": {
-   
       "adaptiveIcon": {
         "foregroundImage": "./assets/jj.png",
         "backgroundColor": "#FFFFFF"
@@ -32,6 +31,11 @@
     "web": {
       "favicon": "./assets/jj.png"
     },
-    "description": "Food Delivery Application"
+    "description": "Food Delivery Application",
+    "extra": {
+      "eas": {
+        "projectId": "36d8a743-b23d-400f-8c23-b4e4bd341620"
+      }
+    }
   }
 }

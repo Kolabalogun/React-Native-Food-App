@@ -6,9 +6,7 @@ const AdsBoard = () => {
     <View>
       <View className="flex-row justify-between my-3 bg-[#02aa14]  p-4 rounded-md">
         <View className="w-[70%]">
-          <Text className="text-white font-medium text-[16px]">
-            Hi, Ibrahim!
-          </Text>
+          <Text className="text-white font-medium text-[16px]">Hello</Text>
           <Text className="text-white my-1.5">
             Welcome, you have 20% discount on all our product from now till next
             August.

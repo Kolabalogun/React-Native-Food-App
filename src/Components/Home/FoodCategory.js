@@ -17,7 +17,7 @@ const FoodCategory = () => {
       <View style={styles.foodList}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {categories.map((category) => (
-            <ButtonCard category={category} />
+            <ButtonCard key={category.id} category={category} />
           ))}
         </ScrollView>
       </View>

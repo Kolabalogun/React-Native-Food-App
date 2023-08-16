@@ -53,7 +53,7 @@ const Checkout = ({ navigation }) => {
 
     if (!address || !contact || !payment) {
       notificationF("All Text Field must be filled");
-    } else if (address.length < 4 || contact.length < 11) {
+    } else if (address.length < 4 || contact.length < 4) {
       notificationF("Invalid Address or Phone Number");
     } else {
       detailsF({
@@ -72,7 +72,7 @@ const Checkout = ({ navigation }) => {
       handleCheckOut();
       // navigation.navigate("MapOrderDelivery");
 
-      navigation.navigate("MapOrderDelivery");
+      navigation.navigate("Success");
     } else {
       notificationF("All Text Field must be filled");
     }
